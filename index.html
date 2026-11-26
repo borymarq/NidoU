@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NidoU - Prototipo Funcional</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>NidoU</h1>
+    <p>Prototipo de validación: alojamiento universitario verificado en Guayaquil</p>
+  </header>
+
+  <main>
+    <!-- 1. BUSCADOR Y FILTROS -->
+    <section class="box">
+      <h2>1. Buscar cuartos verificados</h2>
+      <div class="filters">
+        <select id="sectorFilter">
+          <option value="all">Todos los sectores</option>
+          <option value="ESPOL">Cerca de ESPOL</option>
+          <option value="Sauces">Sauces (Expreso)</option>
+          <option value="Urdesa">Urdesa</option>
+        </select>
+
+        <select id="priceFilter">
+          <option value="999">Cualquier tarifa plana</option>
+          <option value="160">Hasta $160 / mes</option>
+          <option value="220">Hasta $220 / mes</option>
+        </select>
+
+        <button onclick="filterRooms()">Filtrar</button>
+      </div>
+
+      <div id="roomsList" class="grid"></div>
+    </section>
+
+    <!-- 2. INSPECCIÓN, TARIFA PLANA Y RESERVA CON GARANTÍA -->
+    <section id="detailBox" class="box hidden">
+      <h2>2. Detalle, inspección y reserva protegida</h2>
+      <div id="roomDetailContent"></div>
+    </section>
+
+    <!-- 3. TEST BÁSICO DE ROOMMATES -->
+    <section class="box">
+      <h2>3. Test de compatibilidad de roommates</h2>
+      <div class="filters">
+        <select id="studyHabit">
+          <option value="noche">Estudio de noche</option>
+          <option value="dia">Estudio de día</option>
+        </select>
+        <select id="cleanHabit">
+          <option value="ordenado">Muy ordenado</option>
+          <option value="normal">Orden normal</option>
+        </select>
+        <button onclick="checkMatch()">Calcular afinidad</button>
+      </div>
+      <p id="matchOutput" class="result"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
